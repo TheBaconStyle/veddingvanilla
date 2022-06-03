@@ -31,7 +31,7 @@
   </head>
   <body id="top">
     <header class="header">
-      <div class="header__wrapper" v-if="!scrollMenu">
+      <div class="header__wrapper">
         <a href="" class="header__menu-brand" draggable="false">
           Grelna Green
         </a>
@@ -54,7 +54,11 @@
           </svg>
         </label>
         <input type="checkbox" id="toggler" v-model="menuHidden" />
-        <div class="header__menu" :style="isDesktop && ''">
+        <div
+          class="header__menu"
+          :style="isDesktop && ''"
+          v-if="!scrolledFromTop"
+        >
           <div class="header__menu-item-container">
             <a href="#top" class="header__menu-link" draggable="false">
               <span class="header__menu-link__text">Домой</span>
@@ -127,15 +131,15 @@
             <img src="./images/story.jpg" alt="" />
           </div>
         </div>
-        <div class="story__header">Love & Happiness</div>
-        <div class="story__subheader">story</div>
-        <div class="story__text">
+        <h1 class="story__header">Love & Happiness</h1>
+        <h6 class="story__subheader">story</h6>
+        <p class="story__text">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
           tempora eaque doloremque iste sunt sint inventore totam harum laborum
           quos, temporibus provident, similique dolor eveniet impedit iure ut
           sit accusantium quis itaque quae laudantium soluta cupiditate
           pariatur? Cumque, quam error?
-        </div>
+        </p>
       </section>
       <section class="container slider" id="gallery">
         <div class="swiper">
@@ -158,9 +162,62 @@
           </div>
         </div>
       </section>
-      <section class="container form"></section>
+      <section class="parallax">
+        <div class="parallax-wrapper">
+          <span class="parallax-quotes">"</span>
+          <h3 class="parallax-header">Best Friends Forever</h3>
+          <p class="parallax-paragraph">
+            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem
+            quam semper libero, sit amet adipisc sem neque sed ipsum. Lorem
+            ipsum dolor sit amet, consectetuer adipiscing. Aenean commodo ligula
+            eget.
+          </p>
+          <span class="parallax-name">Steven Hall</span>
+          <h6 class="parallax-subheader">decorator</h6>
+        </div>
+      </section>
+
+      <section class="container blocks">
+        <div class="block">
+          <img src="./images/slide4.jpg" alt="" class="block-img" />
+          <div class="block-text">
+            <h2 class="block-header">City & Nature</h2>
+            <span class="block-subheader">locations</span>
+            <p class="block-paragraph">
+              Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+              Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
+              ullamcorper ultricies.
+            </p>
+          </div>
+        </div>
+        <div class="block reverse">
+          <img src="./images/header.jpg" alt="" class="block-img" />
+          <div class="block-text">
+            <h2 class="block-header">Hair& Styling</h2>
+            <span class="block-subheader">organization</span>
+            <p class="block-paragraph">
+              Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+              Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
+              ullamcorper ultricies.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>qwe</footer>
+    <footer class="footer">
+      <h2 class="footer-header">Grenta Green</h2>
+      <p class="footer-paragraph">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor aenean massa et ante tincidunt
+      </p>
+      <em class="footer-contacts"
+        >Email: <a href><span>email@email.email</span></a></em
+      >
+
+      <span class="footer-copyright">© 🥓 TheBaconStyle 🥓</span>
+    </footer>
     <script src="./index.js"></script>
   </body>
 </html>
