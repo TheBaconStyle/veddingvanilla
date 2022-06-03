@@ -1,0 +1,365 @@
+:root {
+  font-size: 16px;
+}
+/* Reset margins and paddings */
+body {
+  min-width: 400px;
+}
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+
+.menu_icon {
+  width: 2rem;
+  color: inherit;
+}
+
+.container {
+  margin: auto;
+  min-height: 100vh;
+  width: 330px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-image: url('./images/header.jpg');
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  &__wrapper {
+    z-index: 100;
+    background-color: transparent;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    backdrop-filter: brightness(70%);
+
+    &.scroll_menu {
+      background-color: white;
+      color: black;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+      & .header__menu-link__text {
+        &::before {
+          background-color: black;
+        }
+      }
+    }
+
+    & > input {
+      display: none;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    overflow: hidden;
+    height: 0px;
+
+    &-item-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &-link {
+      padding: 1rem 2rem;
+      color: inherit;
+      text-decoration: none;
+      min-height: fit-content;
+      transition: all 0.1s linear;
+      width: 100%;
+      text-align: center;
+
+      &__text {
+        position: relative;
+        font-size: 1rem;
+        font-family: 'Oswald';
+
+        &::before {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          transform: scaleX(0%);
+          transform-origin: right;
+          top: 100%;
+          background-color: white;
+          transition: transform 0.1s;
+        }
+      }
+
+      &:hover,
+      &.active {
+        .header__menu-link__text {
+          &::before {
+            transform: scaleX(100%);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+
+    &-toggler {
+      padding: 1rem;
+      display: flex;
+      align-self: center;
+      margin-left: auto;
+    }
+
+    &-brand {
+      text-decoration: none;
+      color: inherit;
+      font-size: 2rem;
+      font-family: 'Playfair Display';
+      line-height: 2rem;
+      padding: 1rem;
+    }
+  }
+}
+
+.marry {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: brightness(80%);
+
+  &__date {
+    font-family: 'Oswald';
+    letter-spacing: 0.75rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+  }
+  &__persons {
+    font-size: 3.5rem;
+    font-family: 'Playfair Display';
+  }
+}
+
+.topbtn {
+  position: fixed;
+  display: block;
+  top: 100%;
+  left: 100%;
+  transform: translate(-150%, -150%);
+  color: inherit;
+  border-radius: 15px;
+  background-color: white;
+  color: #fbb8ac;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #fbb8ac;
+    color: white;
+  }
+}
+
+.story {
+  padding: 5vh 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Playfair Display';
+
+  &__photo {
+    position: relative;
+    min-height: 300px;
+    min-width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &_wrapper {
+      display: flex;
+      justify-content: center;
+      img {
+        position: absolute;
+        width: 500px;
+        transform: translate(-15%, 0%);
+      }
+    }
+  }
+
+  &__header {
+    font-family: inherit;
+    font-size: 2.5rem;
+  }
+
+  &__subheader {
+    font-family: inherit;
+    color: #979797;
+    position: relative;
+    font-size: 1rem;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 55%;
+      width: 100%;
+      height: 1.5px;
+      content: '';
+      background-color: #979797;
+    }
+
+    &::before {
+      transform: translateX(-120%);
+    }
+
+    &::after {
+      transform: translateX(20%);
+    }
+  }
+
+  &__text {
+    font-family: inherit;
+    color: #979797;
+    text-align: center;
+  }
+}
+
+.slider {
+  .swiper-slide {
+    max-width: min-content;
+    img {
+      max-height: 500px;
+      max-width: 500px;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .marry {
+    &__persons {
+      font-size: 5rem;
+    }
+  }
+
+  .container {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .marry {
+    &__persons {
+      font-size: 6.5rem;
+    }
+  }
+
+  .container {
+    width: 630px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header {
+    &__menu {
+      margin: auto;
+      width: auto;
+      height: auto;
+
+      &-item-container {
+        flex-direction: row;
+        align-items: stretch;
+      }
+
+      &-toggler {
+        display: none;
+      }
+
+      &-brand {
+        margin: 0;
+      }
+    }
+  }
+
+  .marry {
+    &__persons {
+      font-size: 8.5rem;
+    }
+  }
+
+  .container {
+    width: 798px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .marry {
+    &__date {
+      font-size: 2rem;
+    }
+
+    &__persons {
+      font-size: 9rem;
+    }
+  }
+
+  .container {
+    width: 980px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .marry {
+    &__persons {
+      font-size: 11rem;
+    }
+  }
+
+  .container {
+    width: 1130px;
+  }
+}
+
+.menu-enter-active,
+.menu-leave-active {
+  transition: transform 0.1s;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  transform: translateY(-100%);
+}
+
+.menu-enter-to {
+  transform: translateY(0%);
+}
+
+.topbtn-enter-active,
+.topbtn-leave-active {
+  transition: opacity 0.1s;
+}
+
+.topbtn-enter-from,
+.topbtn-leave-to {
+  opacity: 0;
+}
+
+.menu-enter-to {
+  opacity: 1;
+}
+
+.slider {
+  width: 100% !important;
+  max-height: 500px !important;
+}

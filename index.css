@@ -1,0 +1,324 @@
+:root {
+  font-size: 16px;
+}
+
+/* Reset margins and paddings */
+body {
+  min-width: 400px;
+}
+
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.menu_icon {
+  width: 2rem;
+  color: inherit;
+}
+
+.container {
+  margin: auto;
+  min-height: 100vh;
+  width: 330px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-image: url("./images/header.jpg");
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+.header__wrapper {
+  z-index: 100;
+  background-color: transparent;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  -webkit-backdrop-filter: brightness(70%);
+          backdrop-filter: brightness(70%);
+}
+.header__wrapper.scroll_menu {
+  background-color: white;
+  color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+.header__wrapper.scroll_menu .header__menu-link__text::before {
+  background-color: black;
+}
+.header__wrapper > input {
+  display: none;
+}
+.header__menu {
+  width: 100%;
+  overflow: hidden;
+  height: 0px;
+}
+.header__menu-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header__menu-link {
+  padding: 1rem 2rem;
+  color: inherit;
+  text-decoration: none;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  transition: all 0.1s linear;
+  width: 100%;
+  text-align: center;
+}
+.header__menu-link__text {
+  position: relative;
+  font-size: 1rem;
+  font-family: "Oswald";
+}
+.header__menu-link__text::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0%);
+  transform-origin: right;
+  top: 100%;
+  background-color: white;
+  transition: transform 0.1s;
+}
+.header__menu-link:hover .header__menu-link__text::before, .header__menu-link.active .header__menu-link__text::before {
+  transform: scaleX(100%);
+  transform-origin: left;
+}
+.header__menu-toggler {
+  padding: 1rem;
+  display: flex;
+  align-self: center;
+  margin-left: auto;
+}
+.header__menu-brand {
+  text-decoration: none;
+  color: inherit;
+  font-size: 2rem;
+  font-family: "Playfair Display";
+  line-height: 2rem;
+  padding: 1rem;
+}
+
+.marry {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-backdrop-filter: brightness(80%);
+          backdrop-filter: brightness(80%);
+}
+.marry__date {
+  font-family: "Oswald";
+  letter-spacing: 0.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+.marry__persons {
+  font-size: 3.5rem;
+  font-family: "Playfair Display";
+}
+
+.topbtn {
+  position: fixed;
+  display: block;
+  top: 100%;
+  left: 100%;
+  transform: translate(-150%, -150%);
+  color: inherit;
+  border-radius: 15px;
+  background-color: white;
+  color: #fbb8ac;
+  transition: all 0.2s;
+}
+.topbtn:hover {
+  background-color: #fbb8ac;
+  color: white;
+}
+
+.story {
+  padding: 5vh 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Playfair Display";
+}
+.story__photo {
+  position: relative;
+  min-height: 300px;
+  min-width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.story__photo_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.story__photo_wrapper img {
+  position: absolute;
+  width: 500px;
+  transform: translate(-15%, 0%);
+}
+.story__header {
+  font-family: inherit;
+  font-size: 2.5rem;
+}
+.story__subheader {
+  font-family: inherit;
+  color: #979797;
+  position: relative;
+  font-size: 1rem;
+}
+.story__subheader::before, .story__subheader::after {
+  position: absolute;
+  top: 55%;
+  width: 100%;
+  height: 1.5px;
+  content: "";
+  background-color: #979797;
+}
+.story__subheader::before {
+  transform: translateX(-120%);
+}
+.story__subheader::after {
+  transform: translateX(20%);
+}
+.story__text {
+  font-family: inherit;
+  color: #979797;
+  text-align: center;
+}
+
+.slider .swiper-slide {
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+.slider .swiper-slide img {
+  max-height: 500px;
+  max-width: 500px;
+}
+
+@media screen and (min-width: 576px) {
+  .marry__persons {
+    font-size: 5rem;
+  }
+
+  .container {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .marry__persons {
+    font-size: 6.5rem;
+  }
+
+  .container {
+    width: 630px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .header__menu {
+    margin: auto;
+    width: auto;
+    height: auto;
+  }
+  .header__menu-item-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .header__menu-toggler {
+    display: none;
+  }
+  .header__menu-brand {
+    margin: 0;
+  }
+
+  .marry__persons {
+    font-size: 8.5rem;
+  }
+
+  .container {
+    width: 798px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .marry__date {
+    font-size: 2rem;
+  }
+  .marry__persons {
+    font-size: 9rem;
+  }
+
+  .container {
+    width: 980px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .marry__persons {
+    font-size: 11rem;
+  }
+
+  .container {
+    width: 1130px;
+  }
+}
+.menu-enter-active,
+.menu-leave-active {
+  transition: transform 0.1s;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  transform: translateY(-100%);
+}
+
+.menu-enter-to {
+  transform: translateY(0%);
+}
+
+.topbtn-enter-active,
+.topbtn-leave-active {
+  transition: opacity 0.1s;
+}
+
+.topbtn-enter-from,
+.topbtn-leave-to {
+  opacity: 0;
+}
+
+.menu-enter-to {
+  opacity: 1;
+}
+
+.slider {
+  width: 100% !important;
+  max-height: 500px !important;
+}/*# sourceMappingURL=index.css.map */

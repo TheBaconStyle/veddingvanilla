@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.36/vue.global.prod.min.js"
+      integrity="sha512-JY3Fi3P2Vu6k3lFvN+azQXnnNp27fmSSy5eRdP8IeTQtVb36Ai93YGiQ4OWenbosePREVc8EH5gk4Eo5Qoiqng=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+      integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Qwe</title>
+  </head>
+  <body id="top">
+    <header class="header">
+      <div class="header__wrapper" v-if="!scrollMenu">
+        <a href="" class="header__menu-brand" draggable="false">
+          Grelna Green
+        </a>
+        <label class="header__menu-toggler" for="toggler" @click="toggleMenu">
+          <svg
+            class="menu_icon"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 20 16"
+            enable-background="new 0 0 20 16"
+            xml:space="preserve"
+            fill="currentColor"
+          >
+            <rect class="navbar__toggler" y="0" width="20" height="2"></rect>
+            <rect class="navbar__toggler" y="7" width="20" height="2"></rect>
+            <rect class="navbar__toggler" y="14" width="20" height="2"></rect>
+          </svg>
+        </label>
+        <input type="checkbox" id="toggler" v-model="menuHidden" />
+        <div class="header__menu" :style="isDesktop && ''">
+          <div class="header__menu-item-container">
+            <a href="#top" class="header__menu-link" draggable="false">
+              <span class="header__menu-link__text">Домой</span>
+            </a>
+            <a href="#gallery" class="header__menu-link" draggable="false">
+              <span class="header__menu-link__text">Галерея</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <section class="marry">
+        <div class="marry__date">24, июня 2022</div>
+        <div class="marry__persons">Данил & Диана</div>
+      </section>
+    </header>
+    <transition name="menu">
+      <div class="header__wrapper scroll_menu" v-if="scrolledFromTop">
+        <a href="" class="header__menu-brand" draggable="false">
+          Grelna Green
+        </a>
+        <label class="header__menu-toggler" for="toggler" @click="toggleMenu">
+          <svg
+            class="menu_icon"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 20 16"
+            enable-background="new 0 0 20 16"
+            xml:space="preserve"
+            fill="currentColor"
+          >
+            <rect y="0" width="20" height="2"></rect>
+            <rect y="7" width="20" height="2"></rect>
+            <rect y="14" width="20" height="2"></rect>
+          </svg>
+        </label>
+        <input type="checkbox" id="toggler" v-model="menuHidden" />
+        <div class="header__menu" :style="isDesktop && ''">
+          <div class="header__menu-item-container">
+            <a href="#top" class="header__menu-link" draggable="false">
+              <span class="header__menu-link__text">Домой</span>
+            </a>
+            <a href="#gallery" class="header__menu-link" draggable="false">
+              <span class="header__menu-link__text">Галерея</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </transition>
+    <transition name="topbtn">
+      <a href="#top" v-if="scrolledFromTop" class="topbtn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="48"
+          width="48"
+          fill="currentColor"
+        >
+          <path
+            d="M22.5 40V13.7L10.1 26.1L8 24L24 8L40 24L37.9 26.1L25.5 13.7V40Z"
+          />
+        </svg>
+      </a>
+    </transition>
+    <main>
+      <section class="container story">
+        <div class="story__photo_wrapper">
+          <div class="story__photo">
+            <img src="./images/story.jpg" alt="" />
+          </div>
+        </div>
+        <div class="story__header">Love & Happiness</div>
+        <div class="story__subheader">story</div>
+        <div class="story__text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
+          tempora eaque doloremque iste sunt sint inventore totam harum laborum
+          quos, temporibus provident, similique dolor eveniet impedit iure ut
+          sit accusantium quis itaque quae laudantium soluta cupiditate
+          pariatur? Cumque, quam error?
+        </div>
+      </section>
+      <section class="container slider" id="gallery">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/slide1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/slide2.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/slide3.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/slide4.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/slide5.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container form"></section>
+    </main>
+    <footer>qwe</footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
