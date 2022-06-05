@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      content="width=device-width, initial-scale=0.9"
     />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.36/vue.global.prod.min.js"
@@ -19,18 +19,17 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.3/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.3/locale/ru.js"></script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Oswald:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css" />
-    <title>Qwe</title>
+    <title>Свадьба 2022</title>
   </head>
   <body id="top">
     <header class="header">
@@ -163,19 +162,15 @@
           </div>
         </div>
       </section>
-      <section class="parallax">
-        <div class="parallax-wrapper">
-          <span class="parallax-quotes">"</span>
-          <h3 class="parallax-header">Наши пожелания</h3>
-          <p class="parallax-paragraph">
-            Если хотите подарить нам ценный и нужный подарок, мы будем очень
-            благодарны за вклад в бюджет нашей молодой семьи.
-          </p>
-          <!-- <span class="parallax-name">Steven Hall</span> -->
-          <!-- <h6 class="parallax-subheader">decorator</h6> -->
+      <section class="container timer">
+        До начала торжества осталось: <br>
+        <div class="timer-wrapper">
+          <div class="timer-unit">месяцев <br> {{timerMonths }}</div>
+          <div class="timer-unit">дней <br> {{timerDays}}</div>
+          <div class="timer-unit">часов <br> {{timerHours}}</div>
+          <div class="timer-unit">минут <br> {{timerMinutes}}</div>
         </div>
       </section>
-
       <section class="container blocks">
         <div class="block">
           <img src="./images/slide4.jpg" alt="" class="block-img" />
@@ -207,10 +202,22 @@
           </div>
         </div>
       </section>
+      <section class="parallax">
+        <div class="parallax-wrapper">
+          <span class="parallax-quotes">"</span>
+          <h3 class="parallax-header">Детали</h3>
+          <p class="parallax-paragraph">
+            Если хотите подарить нам ценный и нужный подарок, мы будем очень
+            благодарны за вклад в бюджет нашей молодой семьи.
+          </p>
+          <!-- <span class="parallax-name">Steven Hall</span> -->
+          <!-- <h6 class="parallax-subheader">decorator</h6> -->
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <h2 class="footer-header">& Приглашение</h2>
-      <p class="footer-paragraph">All you need is love!</p>
+      <p class="footer-paragraph">«Место для счастья - здесь, <br> время для счастья - сейчас!»</p>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2300.335478608693!2d20.5283419!3d54.7916473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e33fe99fffd487%3A0x84658ae9ce213ef!2z0YPQuy4g0JfQsNGA0LXRh9C90LDRjywgOCwg0J7RgNC70L7QstC60LAsINCa0LDQu9C40L3QuNC90LPRgNCw0LTRgdC60LDRjyDQvtCx0LsuLCAyMzgzMDA!5e0!3m2!1sru!2sru!4v1654435890589!5m2!1sru!2sru"
         width="auto"
@@ -220,12 +227,9 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-      <!-- <em class="footer-contacts"
-        >Email: <a href><span>email@email.email</span></a></em
-      > -->
-      <a href="https://github.com/TheBaconStyle" class="footer-copyright"
-        >© 🥓 TheBaconStyle 🥓</a
-      >
+      <span class="footer-copyright">
+        Будем рады Вас видеть! <br>
+      </span>
     </footer>
     <script src="./index.js"></script>
   </body>

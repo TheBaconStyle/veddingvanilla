@@ -6,6 +6,15 @@ Vue.createApp({
       isDesktop: desktopViewQuery.matches,
       menuHidden: true,
       scrolledFromTop: false,
+      timerMonths: '',
+      timerDays: '',
+      timerHours: '',
+      timerMinutes: '',
+      timerSeconds: '',
+      timer: null,
+      eventDate: moment('14-08-2022 16:00', 'DD-MM-YYYY HH:mm')
+        .toDate()
+        .getTime(),
     }
   },
   mounted() {
@@ -18,6 +27,8 @@ Vue.createApp({
       }
       return (this.scrolledFromTop = false)
     }
+    this.timer = setInterval(this.updateTimer, 60 * 1000)
+    this.updateTimer()
   },
   computed: {
     menuAnim() {
@@ -30,6 +41,18 @@ Vue.createApp({
   methods: {
     toggleMenu() {
       this.menuAnim.restart()
+    },
+    updateTimer() {
+      const now = moment().toDate().getTime()
+      const dur = moment.duration(this.eventDate - now, 'milliseconds')
+      const months = dur.months()
+      const days = dur.days()
+      const hours = dur.hours()
+      const minutes = dur.minutes()
+      this.timerMonths = months
+      this.timerDays = days
+      this.timerHours = hours
+      this.timerMinutes = minutes
     },
   },
   watch: {

@@ -29,11 +29,12 @@ body {
   flex-direction: column;
   color: white;
   background-image: url('./images/header.jpg');
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  object-fit: contain;
 
   &__wrapper {
     z-index: 100;
@@ -143,9 +144,9 @@ body {
   backdrop-filter: brightness(80%);
 
   &__date {
-    font-family: 'Oswald';
+    font-family: 'Caveat';
     letter-spacing: 0.75rem;
-    font-weight: 300;
+    font-weight: 100;
     text-transform: uppercase;
     font-size: 1.25rem;
   }
@@ -216,11 +217,12 @@ body {
     &::before,
     &::after {
       position: absolute;
-      top: 55%;
+      top: 40%;
       width: 50px;
-      height: 1.5px;
       content: '';
-      background-color: #979797;
+      background-image: url(./images//wawe.png);
+      background-size: cover;
+      aspect-ratio: 96/28;
     }
 
     &::before {
@@ -234,7 +236,7 @@ body {
 
   &__text {
     font-family: inherit;
-    color: #979797;
+    color: #000000;
     text-align: center;
   }
 }
@@ -242,13 +244,36 @@ body {
 .slider {
   width: 100% !important;
   min-height: min-content !important;
+
   .swiper-slide {
     max-width: min-content;
     overflow: hidden;
+
     img {
       max-height: 500px;
       max-width: 500px;
     }
+  }
+}
+
+.timer {
+  width: 100% !important;
+  min-height: min-content !important;
+  font-size: 2rem;
+  background-color: #f1eae4;
+  padding: 3rem 0rem;
+  text-align: center;
+  font-family: 'Playfair Display';
+  margin-top: 3rem;
+  &-wrapper {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  &-unit {
+    font-family: 'Playfair Display';
+    font-size: 1.2rem;
   }
 }
 
@@ -272,6 +297,7 @@ body {
       border-radius: 50%;
       width: 2rem;
       height: 2rem;
+
       &-wrapper {
         margin-top: 1rem;
         display: flex;
@@ -283,15 +309,18 @@ body {
       width: 300px;
       margin: 0rem 1.5rem;
     }
+
     &-text {
       margin: 0rem 1.5rem;
       max-width: 500px;
     }
+
     &-header {
       font-family: 'Playfair Display';
       margin-bottom: 0.5rem;
       font-size: 2rem;
     }
+
     &-subheader {
       font-family: 'Playfair Display';
       position: relative;
@@ -301,23 +330,28 @@ body {
       &::before {
         content: '';
         width: 50px;
-        height: 1px;
-        background-color: #979797;
+        aspect-ratio: 96/28;
+        background-image: url(./images//wawe.png);
+        background-size: cover;
         position: absolute;
-        top: 50%;
+        top: 60%;
       }
+
       &::before {
         transform: translateX(-120%) translateY(-50%);
       }
+
       &::after {
         transform: translateX(20%) translateY(-50%);
       }
     }
+
     &-paragraph {
-      color: #979797;
+      color: #000000;
       font-family: 'Playfair Display';
       margin-top: 0.5rem;
     }
+
     &.reverse {
       flex-direction: column;
     }
@@ -326,11 +360,10 @@ body {
 
 .parallax {
   background-image: url('./images/block-bg.jpg');
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 3rem;
 
   &-wrapper {
     display: flex;
@@ -344,25 +377,30 @@ body {
     color: white;
     backdrop-filter: brightness(80%);
   }
+
   &-header {
     margin-bottom: 2rem;
     font-family: inherit;
     font-size: 2rem;
   }
+
   &-paragraph {
     margin-bottom: 2rem;
     font-family: inherit;
     max-width: 500px;
   }
+
   &-name {
     margin-bottom: 2rem;
     font-family: inherit;
     font-size: 1.5rem;
   }
+
   &-subheader {
     font-family: inherit;
     font-size: 1rem;
   }
+
   &-quotes {
     font-family: inherit;
     font-size: 5rem;
@@ -380,15 +418,18 @@ body {
   color: white;
   text-align: center;
   font-family: 'Playfair Display';
+
   &-header {
     font-family: inherit;
     margin-bottom: 2rem;
   }
+
   &-paragraph {
     font-family: inherit;
     max-width: 500px;
     margin-bottom: 2rem;
   }
+
   &-contacts {
     font-family: inherit;
     span {
@@ -396,11 +437,13 @@ body {
       text-decoration: none;
     }
   }
+
   &-copyright {
     margin-top: 2rem;
     color: white;
     text-decoration: none;
     cursor: default;
+    font-family: inherit;
   }
 }
 
@@ -459,6 +502,12 @@ body {
 
   .container {
     width: 630px;
+  }
+  .timer {
+    font-size: 3rem;
+    &-unit {
+      font-size: 2rem;
+    }
   }
 }
 
