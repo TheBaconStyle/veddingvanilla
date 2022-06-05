@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.36/vue.global.prod.min.js"
       integrity="sha512-JY3Fi3P2Vu6k3lFvN+azQXnnNp27fmSSy5eRdP8IeTQtVb36Ai93YGiQ4OWenbosePREVc8EH5gk4Eo5Qoiqng=="
@@ -33,7 +36,7 @@
     <header class="header">
       <div class="header__wrapper">
         <a href="" class="header__menu-brand" draggable="false">
-          Grelna Green
+          & Приглашение
         </a>
         <label class="header__menu-toggler" for="toggler" @click="toggleMenu">
           <svg
@@ -70,14 +73,14 @@
         </div>
       </div>
       <section class="marry">
-        <div class="marry__date">24, июня 2022</div>
+        <div class="marry__date">14 августа 2022</div>
         <div class="marry__persons">Данил & Диана</div>
       </section>
     </header>
     <transition name="menu">
       <div class="header__wrapper scroll_menu" v-if="scrolledFromTop">
         <a href="" class="header__menu-brand" draggable="false">
-          Grelna Green
+          & Приглашение
         </a>
         <label class="header__menu-toggler" for="toggler" @click="toggleMenu">
           <svg
@@ -131,14 +134,12 @@
             <img src="./images/story.jpg" alt="" />
           </div>
         </div>
-        <h1 class="story__header">Love & Happiness</h1>
-        <h6 class="story__subheader">story</h6>
+        <h1 class="story__header">Дорогие друзья!</h1>
+        <h6 class="story__subheader">14 августа 2022 г.</h6>
         <p class="story__text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-          tempora eaque doloremque iste sunt sint inventore totam harum laborum
-          quos, temporibus provident, similique dolor eveniet impedit iure ut
-          sit accusantium quis itaque quae laudantium soluta cupiditate
-          pariatur? Cumque, quam error?
+          Мы приглашаем вас на торжественную церемонию, посвященную нашему
+          бракосочетанию, которая состоится 14 августа 2022 года в 16:00. Мы
+          будем счастливы разделить свою радость с вами в наш особенный день.
         </p>
       </section>
       <section class="container slider" id="gallery">
@@ -165,15 +166,13 @@
       <section class="parallax">
         <div class="parallax-wrapper">
           <span class="parallax-quotes">"</span>
-          <h3 class="parallax-header">Best Friends Forever</h3>
+          <h3 class="parallax-header">Наши пожелания</h3>
           <p class="parallax-paragraph">
-            Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem
-            quam semper libero, sit amet adipisc sem neque sed ipsum. Lorem
-            ipsum dolor sit amet, consectetuer adipiscing. Aenean commodo ligula
-            eget.
+            Если хотите подарить нам ценный и нужный подарок, мы будем очень
+            благодарны за вклад в бюджет нашей молодой семьи.
           </p>
-          <span class="parallax-name">Steven Hall</span>
-          <h6 class="parallax-subheader">decorator</h6>
+          <!-- <span class="parallax-name">Steven Hall</span> -->
+          <!-- <h6 class="parallax-subheader">decorator</h6> -->
         </div>
       </section>
 
@@ -181,42 +180,52 @@
         <div class="block">
           <img src="./images/slide4.jpg" alt="" class="block-img" />
           <div class="block-text">
-            <h2 class="block-header">City & Nature</h2>
-            <span class="block-subheader">locations</span>
+            <h2 class="block-header">«Усадьба»</h2>
+            <span class="block-subheader">место проведения</span>
             <p class="block-paragraph">
-              Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-              Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-              ullamcorper ultricies.
+              Мероприятие стстоится по адресу: поселок Орловка, ул. Заречная 8.
+              В гостинно-ресторанном комплексе «Усадьба»
             </p>
           </div>
         </div>
         <div class="block reverse">
           <img src="./images/header.jpg" alt="" class="block-img" />
           <div class="block-text">
-            <h2 class="block-header">Hair& Styling</h2>
-            <span class="block-subheader">organization</span>
+            <h2 class="block-header">Дресс-код</h2>
+            <span class="block-subheader">организация</span>
             <p class="block-paragraph">
-              Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-              Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-              ullamcorper ultricies.
+              Мы очень старались сделать праздник красивым и будем рады, если в
+              своих нарядах вы поддержите цветовую гамму нашей свадьбы:
+              <div class="block-color-wrapper">
+                <div class="block-color" style="--bg:#C78F78"></div>
+                <div class="block-color" style="--bg:#DBBCAA"></div>
+                <div class="block-color" style="--bg:#EFD6D2"></div>
+                <div class="block-color" style="--bg:#FBEBD4"></div>
+                <div class="block-color" style="--bg:#F1EAE4"></div>
+              </div>
             </p>
           </div>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <h2 class="footer-header">Grenta Green</h2>
-      <p class="footer-paragraph">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor aenean massa et ante tincidunt
-      </p>
-      <em class="footer-contacts"
+      <h2 class="footer-header">& Приглашение</h2>
+      <p class="footer-paragraph">All you need is love!</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2300.335478608693!2d20.5283419!3d54.7916473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e33fe99fffd487%3A0x84658ae9ce213ef!2z0YPQuy4g0JfQsNGA0LXRh9C90LDRjywgOCwg0J7RgNC70L7QstC60LAsINCa0LDQu9C40L3QuNC90LPRgNCw0LTRgdC60LDRjyDQvtCx0LsuLCAyMzgzMDA!5e0!3m2!1sru!2sru!4v1654435890589!5m2!1sru!2sru"
+        width="auto"
+        height="auto"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <!-- <em class="footer-contacts"
         >Email: <a href><span>email@email.email</span></a></em
+      > -->
+      <a href="https://github.com/TheBaconStyle" class="footer-copyright"
+        >© 🥓 TheBaconStyle 🥓</a
       >
-
-      <span class="footer-copyright">© 🥓 TheBaconStyle 🥓</span>
     </footer>
     <script src="./index.js"></script>
   </body>

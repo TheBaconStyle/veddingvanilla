@@ -30,7 +30,7 @@ body {
   color: white;
   background-image: url('./images/header.jpg');
   background-attachment: fixed;
-  background-position: center top;
+  background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -175,12 +175,14 @@ body {
 }
 
 .story {
-  padding: 5vh 0rem;
+  padding: 3rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   font-family: 'Playfair Display';
+  min-height: min-content !important;
+  gap: 1.3rem;
 
   &__photo {
     position: relative;
@@ -215,7 +217,7 @@ body {
     &::after {
       position: absolute;
       top: 55%;
-      width: 100%;
+      width: 50px;
       height: 1.5px;
       content: '';
       background-color: #979797;
@@ -265,12 +267,25 @@ body {
     flex-direction: column;
     margin-bottom: 2rem;
 
+    &-color {
+      background-color: var(--bg);
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      &-wrapper {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+
     &-img {
       width: 300px;
       margin: 0rem 1.5rem;
     }
     &-text {
       margin: 0rem 1.5rem;
+      max-width: 500px;
     }
     &-header {
       font-family: 'Playfair Display';
@@ -302,7 +317,6 @@ body {
       color: #979797;
       font-family: 'Playfair Display';
       margin-top: 0.5rem;
-      max-width: 500px;
     }
     &.reverse {
       flex-direction: column;
@@ -316,6 +330,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 3rem;
 
   &-wrapper {
     display: flex;
@@ -383,6 +398,9 @@ body {
   }
   &-copyright {
     margin-top: 2rem;
+    color: white;
+    text-decoration: none;
+    cursor: default;
   }
 }
 
@@ -390,6 +408,40 @@ body {
   .marry {
     &__persons {
       font-size: 5rem;
+    }
+  }
+  .story {
+    &__header {
+      font-size: 3rem;
+    }
+    &__subheader {
+      font-size: 1.5rem;
+    }
+    &__text {
+      font-size: 1.2rem;
+    }
+  }
+  .parallax {
+    &-quotes {
+      font-size: 8rem;
+    }
+    &-header {
+      font-size: 3rem;
+    }
+    &-paragraph {
+      font-size: 1.2rem;
+    }
+  }
+
+  .block {
+    &-header {
+      font-size: 3rem !important;
+    }
+    &-subheader {
+      font-size: 1.5rem;
+    }
+    &-paragraph {
+      font-size: 1.2rem;
     }
   }
 
